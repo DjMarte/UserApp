@@ -5,10 +5,10 @@ namespace Shared.OpcionesUsuario;
 
 public class CrearUsuario
 {
-    public static void CreateUser() {
-        Console.Write("Ingrese el nombre del usuario: ");
+    public void CreateUser() {
+        Console.Write("\nIngrese el nombre del usuario: ");
         var name = Console.ReadLine();
-        Console.Write("Ingrese el email del usuaio: ");
+        Console.Write("\nIngrese el email del usuaio: ");
         var email = Console.ReadLine();
 
         using (var context = new UserContext()) { 
@@ -17,6 +17,9 @@ public class CrearUsuario
             context.SaveChanges();
         }
 
-        Console.WriteLine("Usuario creado correctamente!!!");
+        Console.WriteLine("\nUsuario creado correctamente!!!");
+        Task.Delay(2000).Wait();
+        Console.Clear();
+
     }
 }
